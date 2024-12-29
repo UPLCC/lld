@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+  <title>WebCat</title> 
+  <script src="js/jq.js"></script> 
+ </head> 
+ <body id="v1"> 
+  <div id="a" class="a"> 
+   <div id="b" class="b" onclick="aaa();">
+    <p id="d" class="d"></p> 
+   </div>
+  </div>
+  <p onclick="lp();" style="margin-top:300px;">录屏</p>
+<p onclick="jp();" style="margin-top:20px;">视频通话</p>
+  <style id="v2">
+body{
+margin:0;
+padding:0;
+}
+@keyframes dhc{
+0%{
+width:100px;
+}
+100%{
+width:130px;
+}
+}
+@keyframes dhd{
+0%{
+width:130px;
+}
+100%{
+width:100px;
+}
+}
+.a{
+background-color:white;
+height:30px;
+}
+.b{
+background-color:black;
+width:100px;
+border-radius:20px;
+margin-top:10px;
+height:30px;
+margin:0 auto;
+position:absolute;
+left:0;
+right:0;
+top:7px;
+}
+.d{
+position:absolute;
+top:-40%;
+}
+@keyframes a{
+0%{
+width:100px;
+height:30px;
+border-radius:20px;
+}
+100%{
+width:90%;
+height:170px;
+border:30px;
+}
+}
+@keyframes b{
+0%{
+width:90%;
+height:170px;
+border-radius:30px;
+100%{
+width:100px;
+height:30px;
+border-radius:20px;
+}
+}
+</style> 
+  <script>
+pd = 0;
+dj = 0;
+dja = 0;
+function aaa(){
+if(pd == 0){
+if(dja == 0){
+  if(lpsz == 0){
+if(jpsz == 0){
+b.style.animationName="a";
+b.style.animationDuration="0.5s";
+b.style.width="90%";
+b.style.height="170px";
+b.style.borderRadius="30px";
+lpsz = 0;
+d.style.color="black";
+pd = 1;
+dj = 1;
+setTimeout(function (){
+dj = 0;
+d.style.display="none";
+},500);
+}
+}
+}
+}else{
+if(dj == 0){
+b.style.animationName="b";
+b.style.animationDuration="0.5s";
+b.style.width="100px";
+b.style.height="30px";
+b.style.borderRadius="20px";
+pd = 0;
+dja = 1;
+setTimeout(function (){
+dja = 0;
+},500);
+}
+}
+}
+</script>
+<script>
+lpsz = 0;
+jpsz = 0;
+function lp(){
+if(lpsz == 0){
+if(pd == 0){
+if(dja == 0){
+if(jpsz == 0){
+b.style.animationName="dhc";
+b.style.animationDuration="0.3s";
+b.style.width="130px";
+d.style.display="block";
+document.getElementById("d").innerHTML="●";
+d.style.color="red";
+d.style.top="-40%";
+d.style.left="8px";
+lpsz = 1;
+jpsz = 0;
+}
+}
+}
+}else{
+b.style.animationName="dhd";
+b.style.animatioDuration="0.3s";
+b.style.width="100px";
+document.getElementById("d").innerHTML="";
+d.style.color="black";
+lpsz = 0;
+}
+}
+function jp(){
+if(jpsz == 0){
+if(lpsz == 0){
+document.getElementById("d").innerHTML=".";
+d.style.left="85%";
+d.style.top="-55%";
+d.style.color="#00e917";
+jpsz = 1;
+lpsz = 0;
+}
+}else{
+document.getElementById("d").innerHTML="";
+d.style.color="#00e917";
+jpsz = 0;
+}
+}
+</script>
+ </body>
+</html>
